@@ -41,21 +41,23 @@ app.get("/users/logout", (req, res) => {
     });
 });
 
-// A route to check if a use is logged in on the session cookie
-app.get("/users/check-session", (req, res) => {
-    if (req.session.user) {
-        res.send({ currentUser: req.session.username });
-    } else {
-        res.status(401).send();
-    }
-});
-
-app.get("/users/curruser", (req, res) => {
-  User.findById(req.session.user).then(user => {
-      res.json({currentUser: user});
-  }).catch((error)=>{
-      console.log(error);
-  })
+// Set up a POST route to *create* a user of your web app (*not* a student).
+app.post("/users", (req, res) => {
+    // Create a new user
+    const user = new User({
+        username: req.body.username,
+        password: req.body.password,
+        weaknesses: req.body.weaknesses
+    });
+    // Save the user
+    user.save().then(
+        user => {
+            res.send(user);
+        },
+        error => {
+            res.status(400).send(error); // 400 for bad request
+        }
+    );
 });
 
 app.get('/users', (req, res) => {
@@ -168,26 +170,6 @@ app.get('/users/:username', (req, res) => {
             log(error)
             res.status(400).send(error)
         })
-});
-
-/** User routes below **/
-// Set up a POST route to *create* a user of your web app (*not* a student).
-app.post("/users", (req, res) => {
-    // Create a new user
-    const user = new User({
-        username: req.body.username,
-        password: req.body.password,
-        weaknesses: req.body.weaknesses
-    });
-    // Save the user
-    user.save().then(
-        user => {
-            res.send(user);
-        },
-        error => {
-            res.status(400).send(error); // 400 for bad request
-        }
-    );
 });
 
 module.exports = app;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 // creates a beautiful scrollbar
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
@@ -30,6 +30,7 @@ const switchRoutes = (
           />
         );            
     })}
+    <Route path="/admin" element={<Navigate replace to="/admin/dashboard" />} />
   </Routes>
 );
 

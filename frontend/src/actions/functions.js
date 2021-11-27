@@ -86,24 +86,29 @@ const joinedEventType = (events, user) => {
 }
 
 const postUser = (username, password, weaknesses) => {
-  fetch('/users', {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({username: username, password: password, weaknesses: weaknesses})
-          }).then(function(response) {
-            if (response.status === 200){
-              return response.json();        
-            }
-          }).then(function() {
-            window.location.href = "/login";
-            toast.success('Signed up successfully !', {autoClose: 3000});
-                
-          }).catch(err => {
-            toast.error(err, {autoClose: 3000});
-          });
+  if(password.length < 4) {
+    toast.error('Password too short. Minlength  4.', {autoClose: 3000})
+  } else {
+    fetch('/users', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({username: username, password: password, weaknesses: weaknesses})
+      }).then(function(response) {
+        if (response.status === 200){
+          return response.json();        
+        }
+      }).then(function() {
+        window.location.href = "/login";
+        toast.success('Signed up successfully !', {autoClose: 3000});
+            
+      }).catch(err => {
+        toast.error(err, {autoClose: 3000});
+      });
+  }
+  
 }
 
 const postUserLogin = (username, password) => {

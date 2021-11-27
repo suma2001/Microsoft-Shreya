@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 // core components
 import Admin from "./layouts/Admin.js";
@@ -16,6 +16,7 @@ ReactDOM.render(
       <Route path="/admin/*" element={<Admin/>} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/" element={<Navigate replace to="/login" />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
