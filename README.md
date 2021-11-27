@@ -45,5 +45,5 @@
     
 ### Screenshots
 
-![alt text](https://github.com/suma2001/Microsoft-Shreya/tree/master/screenshots/Login.png)
+![alt text](screenshots/Login.png)
 
