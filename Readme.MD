@@ -1,11 +1,11 @@
 ## Microsoft Engage Project
 
-## Project Structure
+### Project Structure
 
     - Chat Room : Application for the chatroom
     - Frontend : Contains the client side pages and components 
 
-## How to run ?
+### How to run ?
 
     - Be in your root folder
     - npm install
@@ -13,7 +13,7 @@
     - cd frontend && npm install  
     - npm start
 
-## Deployment
+### Deployment
 
 Deployed in Heroku
 
