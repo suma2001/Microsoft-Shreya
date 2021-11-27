@@ -34,6 +34,7 @@
     - In your root folder
     - npm install
     - nodemon server
+    
     - cd frontend && npm install  
     - npm start
 
@@ -44,4 +45,5 @@
     
 ### Screenshots
 
+![alt text](https://github.com/suma2001/Microsoft-Shreya/blob/master/screenshots/Login.jpg?raw=true)
 
