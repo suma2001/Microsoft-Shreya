@@ -46,4 +46,15 @@
 ### Screenshots
 
 ![alt text](screenshots/Login.png)
+![alt text](screenshots/Login.png)
+![alt text](screenshots/Signup.png)
+![alt text](screenshots/Profile.png)
+![alt text](screenshots/Reward-1.png)
+![alt text](screenshots/Reward-2.png)
+![alt text](screenshots/AllGroups.png)
+![alt text](screenshots/CreateGroup.png)
+![alt text](screenshots/DeleteGroupPopUp.png)
+![alt text](screenshots/RecommendedGroups.png)
+![alt text](screenshots/ViewGroupPopUp.png)
+![alt text](screenshots/ChatRoom.png)
 
