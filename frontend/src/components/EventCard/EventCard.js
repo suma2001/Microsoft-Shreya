@@ -15,6 +15,9 @@ import Typography from "@material-ui/core/Typography/Typography";
 import Popup from "../../components/Popup/Popup";
 import BootstrapDialog from "../../components/BootstrapDialog/BootstrapDialog";
 
+import functions from "../../actions/functions";
+const {postEvent, postCoins} = functions;
+
 toast.configure();
   
 const useStyles = makeStyles(styles);
@@ -43,53 +46,28 @@ export default function EventCard(props) {
     setOpen(false);
   };
 
-  function postEvent(URL, username) {
-    fetch(URL, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem("token")
-      },
-      body: JSON.stringify({username: username})
-    }).then(res => {
-      if(res.status === 200) {
-        setJoined(true);
-        toast.success("You joined the group " + event.course);
-        return res.json();
-      }
-    }).catch(err => {
-      console.log(err);
-    })
-  }
-
-  function postCoins() {
-    const user = JSON.parse(localStorage.getItem("user"));
-    fetch("/users/coins/" + user.username, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json , text/plain, */*',
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem("token")
-      },
-      body: JSON.stringify({coins: 3})
-    }).then(res => {
-      if(res.status === 200) {
-        toast.success("Yayy!! You earned 3 gems !")
-        return res.json();
-      }
-    }).then(res => {
-        console.log(res);
-    }).catch(err => {
-      console.log(err);
-  })
+  function joinChatRoomClick() {
+    if(joined === true) {
+      window.open(chatRoomLink, '_blank');
+    } 
+    else {
+      toast.warning("Oops !! You are not a part of this group.")
+    }
   }
 
   function onJoinClick() {
 
-    const URL = `/events/member/${event._id}`;
-    postEvent(URL, user.username);
-    postCoins();    
+    const maxGroupSize = parseInt(event.size.split("-")[1]);
+    console.log(maxGroupSize);
+
+    if(event.members.length >= maxGroupSize) {
+      toast.warning("Sorry !! The group is filled.");
+    } 
+    else{
+      const URL = `/events/member/${event._id}`;
+      postEvent(URL, user.username);
+      postCoins(); 
+    }  
   }
 
   function onLeaveClick() {
@@ -144,13 +122,18 @@ export default function EventCard(props) {
                 </Typography>
               </DialogContent>
               <DialogActions>
-                <Button autoFocus target="_blank" href={chatRoomLink} color="primary" variant="outlined">
+                <Button 
+                  autoFocus
+                  color="primary" 
+                  variant="outlined" 
+                  onClick={() => joinChatRoomClick()}
+                >
                   JOIN CHATROOM
                 </Button>
               </DialogActions>
             </BootstrapDialog>
-            {joined ? <Button onClick={() => onLeaveClick()} color="secondary" >LEAVE</Button> 
-            : <Button onClick={() => onJoinClick()}> JOIN </Button>}
+            {event.username !== user.username ? (joined ? <Button onClick={() => onLeaveClick()} color="secondary" >LEAVE</Button> 
+            : <Button onClick={() => onJoinClick()}> JOIN </Button>) : null}
               </div>
                 <span>@{event.username}</span>
         </CardFooter>

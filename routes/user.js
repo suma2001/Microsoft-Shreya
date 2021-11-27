@@ -124,7 +124,7 @@ app.post('/users/coins/:username', authenticate, (req, res) => {
             }
         })
         .catch((error) => {
-            log(error)
+            console.log(error)
             res.status(400).send()
         })
 })
