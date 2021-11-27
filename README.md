@@ -41,7 +41,7 @@
 ### Deployment
 
     - Deployed in Heroku
-    - Deployed link: [https://ms-sumashreya.herokuapp.com/](https://ms-sumashreya.herokuapp.com/)
+    - Deployed link: [https://ms-sumashreya.herokuapp.com/]
     
 ### Screenshots
 
