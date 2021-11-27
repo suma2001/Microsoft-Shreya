@@ -45,9 +45,8 @@
     
 ### Screenshots
 
-![alt text](screenshots/Login.png)
-![alt text](screenshots/Login.png)
-![alt text](screenshots/Signup.png)
+![alt text](screenshots/Login.png | width=100)
+![alt text](screenshots/Signup.png | width=100)
 ![alt text](screenshots/Profile.png)
 ![alt text](screenshots/Reward-1.png)
 ![alt text](screenshots/Reward-2.png)
