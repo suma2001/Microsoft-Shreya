@@ -40,7 +40,7 @@ const postCoins = (coin) => {
     body: JSON.stringify({coins: coin})
   }).then(res => {
     if(res.status === 200) {
-      toast.success("Yayy!! You earned 5 gems !")
+      toast.success(`Yayy!! You earned ${coin} gems !`)
       // window.location.href = "/admin/allgroups";
       return res.json();
     }

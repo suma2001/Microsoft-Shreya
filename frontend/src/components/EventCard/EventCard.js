@@ -16,7 +16,7 @@ import Popup from "../../components/Popup/Popup";
 import BootstrapDialog from "../../components/BootstrapDialog/BootstrapDialog";
 
 import functions from "../../actions/functions";
-const {postEvent, postCoins} = functions;
+const {postCoins} = functions;
 
 toast.configure();
   
@@ -46,6 +46,26 @@ export default function EventCard(props) {
     setOpen(false);
   };
 
+  function postEvent(URL, username) {
+    fetch(URL, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem("token")
+      },
+      body: JSON.stringify({username: username})
+    }).then(res => {
+      if(res.status === 200) {
+        setJoined(true);
+        toast.success("You joined the group " + event.course);
+        return res.json();
+      }
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+
   function joinChatRoomClick() {
     if(joined === true) {
       window.open(chatRoomLink, '_blank');
@@ -66,7 +86,7 @@ export default function EventCard(props) {
     else{
       const URL = `/events/member/${event._id}`;
       postEvent(URL, user.username);
-      postCoins(); 
+      postCoins(3); 
     }  
   }
 
