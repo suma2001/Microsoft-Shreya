@@ -32,13 +32,13 @@
 ### How to run ?
 
     - In your root folder
-    ```
+    `
     npm install
     nodemon server
     
     cd frontend && npm install  
     npm start
-    ```
+    `
 
 ### Deployment
 
