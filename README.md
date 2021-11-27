@@ -45,7 +45,7 @@
     
 ### Screenshots
 
-![alt text](screenshots/Login.png=250x250)
+![alt text](screenshots/Login.png)
 ![alt text](screenshots/Signup.png)
 ![alt text](screenshots/Profile.png)
 ![alt text](screenshots/Reward-1.png)
