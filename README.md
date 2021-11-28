@@ -43,6 +43,11 @@
     - Deployed in Heroku
     - Deployed link: https://ms-sumashreya.herokuapp.com/
     
+### Video Links
+
+    - Video link : https://drive.google.com/file/d/1ijMY2Hbc-Yc349qmCTXz-5PnZAT9dnBf/view?usp=sharing
+    - PPT link : 
+    
 ### Screenshots
 
 ![alt text](screenshots/Login.png)
