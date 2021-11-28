@@ -55,5 +55,5 @@
 ![alt text](screenshots/DeleteGroupPopUp.png)
 ![alt text](screenshots/RecommendedGroups.png)
 ![alt text](screenshots/ViewGroupPopUp.png)
-![alt text](screenshots/ChatRoom.png)
+![alt text](screenshots/ChatRoom.mp4)
 
