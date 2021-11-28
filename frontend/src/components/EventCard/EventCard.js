@@ -26,7 +26,7 @@ export default function EventCard(props) {
   const classes = useStyles();
   const event = JSON.parse(JSON.stringify(props)).event;
   const user = JSON.parse(localStorage.getItem("user"));
-  const chatRoomLink = "https://whispering-atoll-41471.herokuapp.com/chat.html?username=" + user.username + "&room=" + event.course;
+  const chatRoomLink = "https://chatterroom.netlify.app/chat?name=" + user.username + "&room=" + event.course;
 
   function importAll(r) {
     let images = {};
