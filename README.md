@@ -46,7 +46,7 @@
 ### Video Links
 
     - Video link : https://drive.google.com/file/d/1ijMY2Hbc-Yc349qmCTXz-5PnZAT9dnBf/view?usp=sharing
-    - PPT link : 
+    - PPT link : https://drive.google.com/file/d/1m751NEBMffAM2disoKAYalP7Dvnafv8j/view?usp=sharing
     
 ### Screenshots
 
