@@ -67,7 +67,7 @@ export default function EventCard(props) {
   }
 
   function joinChatRoomClick() {
-    if(joined === true) {
+    if(joined === true || event.username === user.username) {
       window.open(chatRoomLink, '_blank');
     } 
     else {
