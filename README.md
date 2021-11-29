@@ -28,26 +28,53 @@
     - Node Js
     - MongodB Atlas
     - Express Js
+    
+### Deployment - Heroku
+
+* Deployed link: https://ms-sumashreya.herokuapp.com/
 
 ### How to run ?
 
-    - In your root folder
-    - npm install
-    - nodemon server
+#### Main Project
+
+In your root folder, open the terminal and run the following commands
+
+    npm install
+    nodemon server
     
-    - cd frontend && npm install  
-    - npm start
+Then, create a .env file in your project root and add the following in the file
 
-# Deployment
+    PORT = 5000
+    mongoURI = mongodb+srv://shreya:RR1Xhv4yMVTOEGew@cluster0.uat9t.mongodb.net/db?retryWrites=true&w=majority
+    JWT_SECRET = effhcaneyuihvbndfcv
+    
+Open a new terminal and run the following commands
 
-    - Deployed in Heroku
-    - You can check the deployed link [here](https://ms-sumashreya.herokuapp.com/
-    - Deployed link: https://ms-sumashreya.herokuapp.com/
+    cd frontend && npm install  
+    npm start
+    
+#### Chat-Room 
+
+Navigate to the Chat-Room folder from the project root
+    
+    cd Chat-Room
+    
+To run the server, 
+
+    cd server && npm install
+    nodemon index
+    
+To run the client,
+
+    cd client && npm install
+    npm start
+    
     
 ### Video Links
 
-    - Video link : https://drive.google.com/file/d/1ijMY2Hbc-Yc349qmCTXz-5PnZAT9dnBf/view?usp=sharing
-    - PPT link : https://drive.google.com/file/d/1m751NEBMffAM2disoKAYalP7Dvnafv8j/view?usp=sharing
+* You can find the demo Video link [here](https://drive.google.com/file/d/1ijMY2Hbc-Yc349qmCTXz-5PnZAT9dnBf/view?usp=sharing)
+
+* You can find the PPT [here](https://drive.google.com/file/d/1m751NEBMffAM2disoKAYalP7Dvnafv8j/view?usp=sharing)
     
 ### Screenshots
 
