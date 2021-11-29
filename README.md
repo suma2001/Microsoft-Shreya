@@ -38,7 +38,7 @@
     - cd frontend && npm install  
     - npm start
 
-### Deployment
+# Deployment
 
     - Deployed in Heroku
     - You can check the deployed link [here](https://ms-sumashreya.herokuapp.com/
